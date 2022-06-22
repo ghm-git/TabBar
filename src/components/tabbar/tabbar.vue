@@ -5,7 +5,11 @@
 </template>
 
 <script>
-export default {};
+/* eslint-disable */
+export default {
+  props: ["message"]
+};
+/* eslint-enable */
 </script>
 
 <style>

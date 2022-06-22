@@ -3,7 +3,11 @@
 </template>
 
 <script>
-export default {};
+/* eslint-disable */
+export default {
+  name: "Shopcart"
+};
+/* eslint-enable */
 </script>
 
 <style></style>

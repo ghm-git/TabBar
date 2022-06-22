@@ -7,27 +7,50 @@ const Profile = () => import("../views/profile/Profile");
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: "",
-      redirect: "/home"
+      redirect: "/home",
+      meta: {
+        title: "首页"
+      }
     },
     {
       path: "/home",
-      component: Home
+      component: Home,
+      meta: {
+        title: "首页"
+      }
     },
     {
       path: "/category",
-      component: Category
+      component: Category,
+      meta: {
+        title: "分类"
+      }
     },
     {
       path: "/shopcart",
-      component: Shopcart
+      component: Shopcart,
+      meta: {
+        title: "购物车"
+      }
     },
     {
       path: "/profile",
-      component: Profile
+      component: Profile,
+      meta: {
+        title: "我的"
+      }
     }
-  ]
+  ],
+  mode: "history"
 });
+
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title;
+  next();
+});
+
+export default router;
